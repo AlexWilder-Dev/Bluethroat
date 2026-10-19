@@ -2,7 +2,7 @@
 
 A speculative site for Bluethroat, the two railway-arch cocktail bars in Deptford (Arch 2, Deptford Station, est. 2020) and Brixton (51 Atlantic Road, est. 2023). It is a front-end demo on static data: there is no CMS, booking backend or payment, and forms only show a confirmation state.
 
-Live: https://alexwilder-dev.github.io/bluethroat/
+Live: https://alexwilder-dev.github.io/Bluethroat/
 
 ## What's here
 
@@ -20,11 +20,11 @@ All facts live in [`src/data/bluethroat.ts`](src/data/bluethroat.ts), split by b
 ```bash
 npm install
 npm run dev
-npm run build      # outputs dist/ for GitHub Pages (base /bluethroat/)
+npm run build      # outputs dist/ for GitHub Pages (base /Bluethroat/)
 ```
 
 Add `?at=2026-10-23T22:30` before the `#` to pin the clock, for example to show a Friday night:
-`https://alexwilder-dev.github.io/bluethroat/?at=2026-10-23T22:30#/`
+`https://alexwilder-dev.github.io/Bluethroat/?at=2026-10-23T22:30#/`
 
 ### One-off scripts
 
