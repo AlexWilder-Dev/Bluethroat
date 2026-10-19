@@ -7,7 +7,11 @@ export interface LondonNow {
   day: number;
   minutes: number;
   date: Date;
+  /** e.g. "Monday 19 October" */
+  label: string;
 }
+
+const dateLabel = (d: Date, timeZone: string) => d.toLocaleDateString('en-GB', { timeZone, weekday: 'long', day: 'numeric', month: 'long' }).replace(',', '');
 
 /**
  * Wall-clock time in London. A `?at=2026-10-23T22:30` query string pins the clock,
@@ -19,7 +23,7 @@ export function londonNow(): LondonNow {
     const m = at.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
     if (m) {
       const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]));
-      return { day: d.getUTCDay(), minutes: +m[4] * 60 + +m[5], date: d };
+      return { day: d.getUTCDay(), minutes: +m[4] * 60 + +m[5], date: d, label: dateLabel(d, 'UTC') };
     }
   }
   const now = new Date();
@@ -32,7 +36,7 @@ export function londonNow(): LondonNow {
   }).formatToParts(now);
   const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '';
   const day = DAY_SHORT.indexOf(get('weekday'));
-  return { day, minutes: Number(get('hour')) * 60 + Number(get('minute')), date: now };
+  return { day, minutes: Number(get('hour')) * 60 + Number(get('minute')), date: now, label: dateLabel(now, 'Europe/London') };
 }
 
 /** 1020 → "5pm", 1440 → "12am", 1500 → "1am", in the style of their own listings. */

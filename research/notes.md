@@ -130,23 +130,16 @@ The site links straight to these and skips the qrco.de redirect.
   - Alcohol-free options and the Google-review ask exist only inside the PDF.
   - No Instagram handle shown, only an icon.
 
-## Design reasoning (Step 2)
+## Design reasoning (Step 2, revised)
 
-- **Palette from the room, not from "cocktail bar".**
-  - Ground: near-black with a cool green cast `#0c0f0f`, the dark walls and black marble.
-  - Gold `#dabf7e`, the sign leaf: the wordmark and key numbers only.
-  - Slate `#4c5d67` / `#384958`, the menu glass icons and the site's one colour: lines and icons.
-  - Bone `#e9e6df`, Deptford's white marble: the light surface for menu cards.
-  - Amber `#eba253`, the lit back bar: the "open now" glow.
-  - Two quiet accents: terracotta `#bb5f33` from the menu spines and apron straps, and tile olive `#77571a` from the Brixton vault.
-- **Type:**
-  - **Marcellus** (their menu serif, matches the sign) for the wordmark and display, with the wordmark set as real text with CSS tracking.
-  - **Poppins** (their site font) for small caps labels, tracked like the TT Drugs headings on the menu, and UI.
-  - Flavour words tracked wide, as printed.
-- **Shape:** the arch. Both bars are railway arches and their line is "modern hospitality in beautiful railway arches", so photos sit in arch-topped windows and the first screen is two arches side by side, one per bar. No full-bleed hero.
-- **Surface follows the bar:** with Deptford selected, menu cards sit on white-veined marble; with Brixton, on black marble with white veins, matching each real bar top.
-- **Motion:** slow and soft, "nights that unfold slowly". Arches open like a vault from the springing line, the glass icons draw themselves line by line like the menu drawings, and nothing bounces.
-- **Phone-first:** a bottom tab bar within thumb reach (Tonight, Menu, Visit, Hire). The first screen states which arch, open or closed, and until when, in London time.
+The first pass was dark with gold accents, small tracked capitals over every heading, pill buttons, rounded cards and arch-masked thumbnails. It read as a generic template, so it was redone around two real Bluethroat objects:
+
+- **The printed menu card** sets the page: warm white paper, ink text, the slate glass line drawings, Marcellus for ingredients and prose, bold caps for drink names, and flavour words letter-spaced in grey, as printed. Headings are their own (COCKTAILS, WINES, BEERS, SNACKS, PRIVATE HIRE, FOOD, CONFIRMATION AND CANCELLATION POLICY, TO ENQUIRE). Cocktail price is shown "£13.5" on the card, as they print it.
+- **The sign by each door** carries the live status: gold leaf on a black plate with four screws and a single downlight. When a bar is open its lamp is on (teal over Brixton, as in their photo; warm over Deptford, as on the brick), and the plate reads "Open till 1am". When it's shut the lamp is off and the gold goes dull.
+- Gold now appears only on the plates. Everything else is paper, ink and slate. Buttons are square-cornered and used only for directions and sending the enquiry; everything else is an underlined link.
+- Photographs are shown rectangular and captioned plainly, with no masks.
+- Motion is limited to the lamp flickering on, the glass drawing itself, and the switch underline sliding.
+- Phone-first: the first screen is both plates, so it answers which arch, open or not, and until when. Text-only tab bar at the bottom.
 
 ## What the owners most want this site to do
 

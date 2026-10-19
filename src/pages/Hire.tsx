@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { bars, hire } from '../data/bluethroat';
 import { useBar } from '../state/bar';
-import { ArchFrame } from '../components/ArchFrame';
+import { Photo } from '../components/Photo';
 import { HirePlanner, type Plan } from '../components/HirePlanner';
 import { EnquiryForm } from '../components/EnquiryForm';
 
 export function Hire() {
   const { barId, setBar } = useBar();
   const [plan, setPlan] = useState<Plan>({ bar: barId, band: 'fri-sat', guests: 40 });
-  const formRef = useRef<HTMLFormElement>(null);
 
   // The header switch and the planner stay in step.
   useEffect(() => {
@@ -28,67 +27,50 @@ export function Hire() {
   const bar = bars[plan.bar];
 
   return (
-    <article className="page hire-page">
-      <header className="page-head">
-        <div className="page-head-text">
-          <p className="eyebrow">Private hire</p>
-          <h1 className="h1">The whole arch, for your night.</h1>
-          <p className="lede">
-            Exclusive use of Bluethroat Deptford for up to {bars.deptford.hire.capacity} guests, or Brixton for up to {bars.brixton.hire.capacity}. Set your
-            bar, night and numbers below to see exactly what it takes, then send us the details.
-          </p>
-        </div>
-        <ArchFrame photo={bar.photos.hire} className="page-head-arch" sizes="(min-width: 900px) 30vw, 40vw" eager />
+    <article className="page hire">
+      <header className="sheet hire-head">
+        <h1 className="label">Private hire</h1>
+        <p className="hire-cap">
+          Bluethroat {bar.name}, up to {bar.hire.capacity} guests
+        </p>
+        <p className="quiet">
+          The whole arch for your event. Set the bar, the night and your numbers to see the minimum spend, service and hire fee, then send us the details.
+        </p>
       </header>
 
-      <section className="section" aria-labelledby="planner-title">
-        <h2 id="planner-title" className="visually-hidden">
-          Hire planner
-        </h2>
+      <figure className="hire-photo">
+        <Photo photo={bar.photos.hire} sizes="(min-width: 900px) 60vw, 100vw" eager />
+      </figure>
+
+      <section className="sheet" aria-label="Plan your hire">
         <HirePlanner plan={plan} onChange={update} onStart={start} />
-        <p className="fine">{hire.payment}</p>
       </section>
 
-      <section className="section terms" aria-labelledby="terms-title">
-        <h2 id="terms-title" className="h2">
-          What’s included
-        </h2>
-        <div className="terms-grid">
-          {hire.terms.map((t) => (
-            <div key={t.title} className="term">
-              <h3 className="caps">{t.title}</h3>
-              <ul>
-                {t.points.map((p) => (
-                  <li key={p}>{p}</li>
-                ))}
-              </ul>
-            </div>
+      <section className="sheet terms" aria-label="Terms">
+        {hire.terms.map((t) => (
+          <div key={t.title} className="term">
+            <h2 className="label">{t.title}</h2>
+            {t.points.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        ))}
+        <div className="term">
+          <h2 className="label">Confirmation and cancellation policy</h2>
+          {hire.steps.map((s, i) => (
+            <p key={s}>
+              <span className="step">{i + 1}.</span> {s}
+            </p>
           ))}
+          <p>{hire.payment}</p>
         </div>
       </section>
 
-      <section className="section steps" aria-labelledby="steps-title">
-        <h2 id="steps-title" className="h2">
-          How booking works
+      <section className="sheet" aria-labelledby="enquire-title">
+        <h2 id="enquire-title" className="label">
+          To enquire
         </h2>
-        <ol className="steps-list">
-          {hire.steps.map((s, i) => (
-            <li key={s}>
-              <span className="step-n" aria-hidden="true">
-                {['I', 'II', 'III'][i]}
-              </span>
-              <p>{s}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="section" aria-labelledby="enquiry-title">
-        <p className="eyebrow">Enquire</p>
-        <h2 id="enquiry-title" className="h2">
-          Tell us about your night.
-        </h2>
-        <EnquiryForm ref={formRef} plan={plan} onPlan={update} />
+        <EnquiryForm plan={plan} onPlan={update} />
       </section>
     </article>
   );

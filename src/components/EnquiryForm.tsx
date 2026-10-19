@@ -113,7 +113,7 @@ export const EnquiryForm = forwardRef<HTMLFormElement, { plan: Plan; onPlan: (p:
             exit={{ opacity: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="eyebrow">Enquiry received</p>
+            <p className="label">Enquiry received</p>
             <h3 className="h3">Thank you, {d.name.split(' ')[0]}.</h3>
             <p>
               Your enquiry for <strong>Bluethroat {bar.name}</strong> on <strong>{longDate(d.date)}</strong> for <strong>{plan.guests} guests</strong> is with
@@ -143,7 +143,7 @@ export const EnquiryForm = forwardRef<HTMLFormElement, { plan: Plan; onPlan: (p:
               <a className="btn btn--line" href={mailto()}>
                 Email it to {bar.name} instead <IconOut />
               </a>
-              <button type="button" className="btn btn--ghost" onClick={() => setSent(false)}>
+              <button type="button" className="more" onClick={() => setSent(false)}>
                 Edit enquiry
               </button>
             </div>
@@ -300,7 +300,7 @@ export const EnquiryForm = forwardRef<HTMLFormElement, { plan: Plan; onPlan: (p:
               <p className="form-sum">
                 {bar.name} · {bandLabel} · {plan.guests} guests · <strong>{price(t.minimum)}</strong> minimum + 12.5% service · {price(hire.fee)} hire fee
               </p>
-              <button type="submit" className="btn btn--gold">
+              <button type="submit" className="btn">
                 Send enquiry
               </button>
             </div>

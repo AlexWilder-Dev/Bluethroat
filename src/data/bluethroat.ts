@@ -431,7 +431,7 @@ export const hire = {
   minGuests: 10,
   terms: [
     {
-      title: 'The arch is yours',
+      title: 'Exclusive use',
       points: [
         'The £500 hire fee secures exclusive use of the venue for your event. It is separate from the minimum spend.',
         'The minimum spend is redeemable against drinks purchased during your event. All minimum spends exclude the 12.5% service charge.',

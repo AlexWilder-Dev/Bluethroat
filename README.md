@@ -6,9 +6,9 @@ Live: https://alexwilder-dev.github.io/Bluethroat/
 
 ## What's here
 
-- **Tonight.** The two arches side by side with live open/closed status in London time, how late each pours, directions, what's on the menu and a review nudge once the night is under way.
+- **Tonight.** Both bars as their door signs: the lamp is on while a bar is open ("Open till 1am") and off when it's shut, in London time. Address, hours, access, directions and a review nudge once the night is under way.
 - **Twelve words.** Every cocktail on Edition 12 has one flavour word on the printed menu. Pick a word to meet the drink, priced for your bar, with an alcohol-free filter.
-- **Menu.** Edition 12 (Autumn & Winter 2026) as a web page: cocktails on a marble bar top that matches each bar (white at Deptford, black at Brixton), plus wines, beers and snacks.
+- **Menu.** Edition 12 (Autumn & Winter 2026) set like their printed card: glass drawings, cocktails, wines, beers and snacks, priced for the chosen bar.
 - **Visit.** Address, Google/Apple Maps, opening hours with tonight highlighted, access, house rules and the FAQ.
 - **Private hire.** A planner for bar, night and guests that shows capacity, minimum spend, service and the £500 fee, then an enquiry form pre-filled from it.
 - **Bar switch.** Deptford/Brixton carries through prices, wines, hours, access and hire figures, and is remembered between visits.
