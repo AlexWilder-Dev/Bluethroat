@@ -33,7 +33,7 @@ Add `?at=2026-10-23T22:30` before the `#` to pin the clock, for example to show 
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main`. Set Pages to "GitHub Actions" under the repository settings.
+`.github/workflows/deploy.yml` builds and publishes `dist/` to GitHub Pages on every push to `main` or the current default branch. Pages is set to "GitHub Actions" in the repository settings.
 
 ## Credits
 
